@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>Calorie Counter Lite</title>
+<head>
+<script>
+	function addCalories() {
+		if( !isNaN(document.getElementById("input").value) && document.getElementById("input").value != 0 ){
+   		 	document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + parseInt(document.getElementById("input").value);	
+		}
+    	document.getElementById("input").value = "";
+	}
+</script>
+</head>
+<body>
+<p style="display:inline">Calories Consumed: </p><p style="display:inline" id="current">0</p>
+<form>
+  Calories to add:
+  <input id="input" type="text" onkeydown= "if(event.keyCode == 13){addCalories();return false;}"><br>
+</form>
+<button type="button" onclick="addCalories()">Add calories</button>
+</body>
+</html>
